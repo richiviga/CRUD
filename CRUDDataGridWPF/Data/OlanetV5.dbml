@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Olanet_OrdonezV5_Datos" Class="OlanetV5DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=svrsqlmes;Initial Catalog=Olanet_OrdonezV5_Datos;Persist Security Info=True;User ID=sa" SettingsObjectName="CRUDDataGridWPF.Properties.Settings" SettingsPropertyName="Olanet_OrdonezV5_DatosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.scm_LYM_MAQUINAS" Member="Maquina">
+    <Type Name="Maquina">
+      <Column Name="maquina_id" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maquina_id_FiltroOFs" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PorOperario" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CantidadesUltFaseConMatricula" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SiempreMatriculaNueva" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FaseAntConNumSerie" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SoloCantidadesFaseEmbalaje" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ImprimirEtisUltFase" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NumerosSerieAutomaticos" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MantenerTraza" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BotonCarretillero" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CantCarretilleroPorCodigoBarras" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CargaOrdenEnPrep" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PasarDCITiempoTeorico" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CompCantidadFaseAnt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ListaMotivosRecuperables" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RendimientoFijo" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+      <Column Name="TiempoDeAsignacion" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+      <Column Name="IdSeccion" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CantidadesPorTabla" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TipoEntrada" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="TipoSalida" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantFinPrep" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantEntraMaq" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantSaleMaq" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantIniInci" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantFinInci" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="CantIntFinOrden" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="JustIncEntraMaq" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="JustIncSaleMaq" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="JustIncFinOrden" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="JustIncFinInc" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MostrarRol" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MostrarListaInicioOrden" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TipoVP" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Tiempo_Paro" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Tiempo_Microparo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Tiempo_Aviso" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ciclos_Aviso" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Tiempo_Muestreo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ciclos_Muestreo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AvAutoQ_MP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AvAutoQ_Piezas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AvAutoQ_InicioOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AvAutoQ_IntFinOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AvAutoQ_InicioPREP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AvAutoQ_FinPREP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Servidor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Materiales_Obligatorios" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Inf_Mat_IOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Inf_Mat_FP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Inf_Mat_FOF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Q_EO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_SO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_IOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_FIOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_II" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_FI" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_FPOF" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_IT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_FT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_EP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_SP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_CL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_DL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_CC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_DC" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Q_Avisos" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="formato_etiqueta_nme" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Comprobar_Orden_SO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ObjetivoOEE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VisualizarOEE" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="TipoCantidades" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ControlarPiezasTeo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeTareas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeOrdenes" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeIncidencias" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeMateriales" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeCheckList" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdenOpeCambioRol" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cualificaciones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisualizarSecuenciador" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CambioMulti" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Maquina_nme" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConsolidaPieza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PedirCantUbic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadesContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodigoLote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisorSucesos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RepetirIDBoletin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoFinInc" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ControlNegativasLotes" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RecalcularIncidencia" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="VPTabMaquinas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="VPTabProduccion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="VPTabConsultas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="VPTabLog" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GenerarLote" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoMaquina" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BuscarPor" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NumHorno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VPTiempoCompRefresco" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VisualizarGrafico" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MultiLote" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReetiquetarMP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MostrarMotivosInterrupcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReiniciarOrdenPreparacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IncidenciaInicioOrden" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IncidenciaInicioOrdenAlternativa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RepetirPreparacionInicioOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoSenalMarchaParo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BotonesCicloLargo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RepetirIncidenciaInicioOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InciarOrdenEnIncidencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ControlarCantidadTeoricaContenedor" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ComprobarContenedoresMaterialEntrada" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="XXXX_VPTiempoCompRefresco1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChequearLote" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargarLotesGuardados" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgruparConsumo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DesvioSenalBuenas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RetomarLote" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IdMotivoMalasAutomaticas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VisualizarGantt" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="TiempoIncidenciaJusAuto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contenedor_FIOF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MonitorPiezasTurno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IntegracionLogistica" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MargenSobreProduccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChequearLoteUbicacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MalasRestanBuenas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoExpulsarOperario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CortarInciCTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Embalaje_IOF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsarConfiguracionPeticionOperarioPorBotActiu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChequearAvisoCantidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EtiActRad" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EtiAntRad" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdImpresoraActiva" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GrupoPrima" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FaseCNQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Polivalencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Actividad" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PermiteModificarBuenasCapturadasPorTabla" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RedirigirAFase5siExiste" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EnviarMailNuevaOF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MailNuevaOF" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.scm_Lym_Operarios" Member="Operario">
+    <Type Name="Operario">
+      <Column Name="operario_id" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="operario_nme" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UET_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="baja_ind" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaximMaquinesAct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TareaDefecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idTipoOperario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RendimientoFijo" Type="System.Decimal" DbType="Decimal(10,5)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdGrupoValoracion" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="UltimoBocata" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodSeccion" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TipoHorario" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="IdPuestoTrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Servidor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaIncidencia" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ListaMaquinas" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TerminalSalida" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UltimoRol" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Inspector" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clave" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MOD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PorcentajeMOD" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Celula" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="GrupoPrima" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Sindicalista" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CATEGORIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GRUPO_OLD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GRUPO_NEW" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO_SALARIO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IPG" Type="System.Decimal" DbType="Decimal(9,2) NOT NULL" CanBeNull="false" />
+      <Column Name="NIVEL_PUESTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UltHorario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dh_Asignacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EQUIPO_PAGO_M" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NSP_Activo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="JubiladoParcial" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TipoMO" Type="System.Decimal" DbType="Decimal(1,0)" CanBeNull="true" />
+      <Column Name="ProgIncidencias" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PRODUCTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IncentivoA" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
+      <Column Name="EsCambiador" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GRUPOPRIMA_FIXED" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="PuestoHabitual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JEFE_TALLER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LIQ_INDIVIDUAL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IncLean" Type="System.Decimal" DbType="Decimal(9,3) NOT NULL" CanBeNull="false" />
+      <Column Name="UltHorarioHaciendoExtra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aperh_Piezasmalas_operarioid" Member="FichCNQOper">
+    <Type Name="FichCNQOper">
+      <Column Name="operario_id" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="operario_nme" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aperh_Piezasmalas_maquinaid" Member="FichCNQMaq">
+    <Type Name="FichCNQMaq">
+      <Column Name="maquina_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aperh_Piezasmalas_OFOT" Member="FichCNQOFOT">
+    <Type Name="FichCNQOFOT">
+      <Column Name="OT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.scm_TiposMotivosMalas" Member="FichCNQTiposMotivosMalas">
+    <Type Name="FichCNQTiposMotivosMalas">
+      <Column Name="IdTipoMotivoMalas" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescTipoMotivoMalas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Servidor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Recuperable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aperh_PiezasMalas" Member="aperh_PiezasMalas">
+    <Type Name="aperh_PiezasMalas">
+      <Column Name="IdMalas" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Idboletin" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="operario_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoPieza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoMotivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdMotivoMalas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(12,5)" CanBeNull="true" />
+      <Column Name="IdMaqAct" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Referencia" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="maquina_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Reproceso" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="Horas" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REPROCESO_FIXED" Type="System.String" DbType="NVarChar(4000)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Incidente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OperarioPanales" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LetraPanales" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OpRadiadores" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdMalas_ORI" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UdMedida" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="EstaEnIFS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Operacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idMarcajeOT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdTipoMotivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aperh_piezasmalas_condesc" Member="FichajeCNQ">
+    <Type Name="FichajeCNQ">
+      <Column Name="IdMalas" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Idboletin" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="operario_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TipoPieza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoMotivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdMotivoMalas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(12,5)" CanBeNull="true" />
+      <Column Name="IdMaqAct" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="dh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Referencia" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="maquina_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Reproceso" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="Horas" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="REPROCESO_FIXED" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Incidente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OperarioPanales" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LetraPanales" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="OpRadiadores" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IdMalas_ORI" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UdMedida" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="EstaEnIFS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OT" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Operacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="idMarcajeOT" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdTipoMotivo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="operario_nme" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DescTipoMotivoMalas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DescMotivoMalas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Motivo_pzasmalas" Member="FichCNQMotivosMalas">
+    <Type Name="FichCNQMotivosMalas">
+      <Column Name="IdMotivoMalas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DescMotivoMalas" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

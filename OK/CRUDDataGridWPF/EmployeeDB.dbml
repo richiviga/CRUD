@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="EmployeeDB" Class="EmployeeDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=B314LTRV\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True" SettingsObjectName="CRUDDataGridWPF.Properties.Settings" SettingsPropertyName="EmployeeDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EMP_BASIC_INFO" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EMP_ID" Member="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMP_FIRST_NAME" Member="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_LAST_NAME" Member="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_EMAIL_ID" Member="EmailID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_CONTACT" Member="Contact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

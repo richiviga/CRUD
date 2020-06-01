@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="VenusDb">
+  <DataContextMoniker Name="/VenusDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ad0e8f23-0de9-473d-afa1-6dfbd1773977" absoluteBounds="1.875, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/VenusDbDataContext/Familia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb335bfa-9b46-48cf-8390-e50ba2c231aa" absoluteBounds="1.8899999999999997, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

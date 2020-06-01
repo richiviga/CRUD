@@ -1,0 +1,1 @@
+﻿select maquina_id from dbo.aperh_piezasmalas group by maquina_id

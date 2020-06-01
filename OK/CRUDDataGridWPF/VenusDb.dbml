@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="N295_data" Class="VenusDbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.0.0.9\SQL2008;Initial Catalog=N295_data;Persist Security Info=True;User ID=sa" SettingsObjectName="CRUDDataGridWPF.Properties.Settings" SettingsPropertyName="N295_dataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="imp.pl_familias" Member="Familia">
+    <Type Name="Familia">
+      <Column Name="xdescripcion" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="xempresa_id" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="xfamilia_id" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="xporc_desc" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="n295_porc_obs" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="xnomen_comb" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="xfactor_usupl" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.875" name="OlanetV5">
+  <DataContextMoniker Name="/OlanetV5DataContext" />
+  <nestedChildShapes>
+    <classShape Id="013dc4d5-fb36-42c0-afb5-d2b17261cfb9" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/OlanetV5DataContext/Maquina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79e74aac-de59-4584-924e-ffe9421c637c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 28.5177001953125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45641f86-b246-4414-b682-a6547dee9f43" isExpanded="false" absoluteBounds="2.625, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/OlanetV5DataContext/Operario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b7387d1-4700-4df4-9d31-487e7ce2605d" absoluteBounds="2.6399999999999997, 0.96, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9775f679-b55f-41f7-b3e0-62bfb64a1c37" isExpanded="false" absoluteBounds="0.5, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichCNQOper" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e29febad-1e98-4b23-8b62-b7283d3367d6" absoluteBounds="0.51499999999999968, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="359a5939-9bb0-4ac8-811e-659a6f793c1c" isExpanded="false" absoluteBounds="0.5, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichCNQMaq" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac43913d-df6b-4ca0-a427-446f23342dbf" absoluteBounds="0.51499999999999968, 2.2100000000000009, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a6f13f58-4f7a-4154-902e-10a3dd8bd66e" absoluteBounds="0.5, 3.875, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichCNQOFOT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a14e718-0415-439a-a1ba-f2ccb7789640" absoluteBounds="0.51499999999999968, 4.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a0c687d-40ac-4262-81de-047a3e652969" absoluteBounds="5.375, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichCNQTiposMotivosMalas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab52b162-1617-495d-8012-1c2ffbc87296" absoluteBounds="5.39, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f21e01ee-185a-4368-92f4-9beb3bd4314a" absoluteBounds="5, 2.5, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/OlanetV5DataContext/aperh_PiezasMalas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abba3eac-56f9-48b5-9aa1-e36aa71c7d04" absoluteBounds="5.015, 2.96, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44f361cf-6b37-4bb1-9767-ab018eca33cb" absoluteBounds="3.875, 3.25, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichajeCNQ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cebc38c5-f739-4cbe-8540-314a664bb99b" absoluteBounds="3.89, 3.71, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8a43a8c-75bb-40f4-a760-ccb34883259c" absoluteBounds="3.625, 2, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/OlanetV5DataContext/FichCNQMotivosMalas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05172d62-20ad-4a22-9af8-d924a855da19" absoluteBounds="3.64, 2.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

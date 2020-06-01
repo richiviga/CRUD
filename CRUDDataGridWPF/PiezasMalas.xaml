@@ -1,0 +1,364 @@
+﻿<Window x:Class="CRUDDataGridWPF.PiezasMalas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUDDataGridWPF"
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+    
+        Title="Corrección Fichajes CNQ" Height="600" Width="1200" ResizeMode="CanMinimize" 
+        Margin="0,0,0,0"
+        mc:Ignorable="d">
+    <Grid Background="Beige" >
+        <!--AlternatingRowBackground="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}-->
+        <Label HorizontalAlignment="Left" Height="23" Margin="8,0,0,0"   VerticalAlignment="Top" Width="30" Content="IFS"/>
+        <!--<ComboBox x:Name="cbOperarios_PM_" Visibility="Visible" Margin="0,60,1022,480"/>-->
+        <ComboBox x:Name="cbOperarios_" SelectedValue="01089" Visibility="Hidden" Margin="341,0,555,540"/>
+        <ComboBox x:Name="cbMaquinas_" Visibility="Hidden" Margin="200,60,765,480"/>
+        <ComboBox x:Name="cbOFOT_"     Visibility="Hidden" FontSize="10" Margin="650,60,423,480" Text="OTOF" Background="LightGreen" IsReadOnly="True" />
+        <ComboBox x:Name="cbTipoMotivo_"  Visibility="Hidden" FontSize="10" Margin="0,0,876,526" Text="TipoMotivo" Background="LightGreen" IsReadOnly="True" />
+        <ComboBox x:Name="cbMotivo_"  Visibility="Hidden" FontSize="10" Margin="500,60,590,480" Text="Motivo" Background="LightGreen"  IsReadOnly="True" />
+        <!-- SelectedCellsChanged="dg_SelectedCellsChanged"
+              -->
+        <Custom:DataGrid 
+            
+                    x:Name="dgFichajesCNQ"
+                    CanUserReorderColumns="true"
+                    CanUserSortColumns="true"
+                    FontFamily="SegoeUI"
+                    AlternatingRowBackground="Gray"
+                    AutoGenerateColumns="False" 
+                    RowEditEnding="dgData_RowEditEnding" 
+                    
+            
+            
+                    CommandManager.PreviewExecuted="dgData_PreviewExecuted"
+                    
+                    Margin="10,45,10,10"  
+                >
+            <Custom:DataGrid.Resources>
+                <ComboBox x:Key="miMotivosCb" Name="MotivosCb" ></ComboBox>
+            </Custom:DataGrid.Resources>
+            <Custom:DataGrid.Columns>
+                <!-- en ifs -->
+                <!--<CheckBox x:Name="EnIFS_Filtro"  FontSize="10" HorizontalAlignment="Left" Height="20" Margin="10,25,0,0" VerticalAlignment="Top" />-->
+                <!--<Custom:DataGridCheckBoxColumn x:Name="EstaEnIFS" Binding="{Binding EstaEnIFS}" Header="EnIFS" Width="SizeToHeader"/>-->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>IFS</Label>
+                                <CheckBox x:Name="EnIFS_Filtro" IsThreeState="True" Click="EnIFS_Filtro_Checked"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding EstaEnIFS}"   />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <CheckBox IsChecked="{Binding EstaEnIFS, Mode=TwoWay}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+                </Custom:DataGridTemplateColumn>
+
+                <!-- Fecha -->
+                <!--<Custom:DataGridTextColumn x:Name="Fecha_idColumn" Binding="{Binding FECHA, StringFormat={}{0:dd/MM/yy}}" Header="Fecha" Width="60"/>-->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Fecha</Label>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Width="30">Ini:</Label>
+                                    <DatePicker x:Name="FIni_Filtro" FontSize="10" SelectedDateChanged="FIni_cambiada"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Width="30">Fin:</Label>
+                                    <DatePicker x:Name="FFin_Filtro"  FontSize="10" SelectedDateChanged="FFin_cambiada"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox   Text="{Binding FECHA, StringFormat={}{0:dd/MM/yy}}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <!--<DatePicker x:Name="FIni_Filtro" FontSize="10" SelectedDateChanged="FIni_cambiada"/>-->
+                            <DatePicker   SelectedDate="{Binding FECHA,  Mode=TwoWay}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+                </Custom:DataGridTemplateColumn>
+
+                <!-- Operario -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Operario</Label>
+                                <TextBox x:Name="Oper_Filtro" Width="100" TextChanged="Oper_Filtro_TextChanged" />
+                                <ComboBox x:Name="cbOperarios" FontSize="10" IsReadOnly="True" ItemsSource="{Binding ElementName=cbOperarios_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbOperarios_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbOperarios_, Path=SelectedValuePath}" SelectionChanged="CbOperarios_SelectionChanged"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox    Text="{Binding operario_nme ,Mode=OneWay}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox FontSize="20" SelectedValue="{Binding operario_id}" ItemsSource="{Binding ElementName=cbOperarios_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbOperarios_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbOperarios_ ,Path=SelectedValuePath}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+                </Custom:DataGridTemplateColumn>
+
+                <!-- maquina -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Máquina</Label>
+                                <ComboBox x:Name="cbMaquinas" FontSize="10" IsReadOnly="True" ItemsSource="{Binding ElementName=cbMaquinas_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbMaquinas_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbMaquinas_, Path=SelectedValuePath}" SelectionChanged="CbMaquinas_SelectionChanged"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock   x:Name="maquina_idColumn" Text="{Binding maquina_id}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding maquina_id}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+                </Custom:DataGridTemplateColumn>
+                <!-- OFOt    -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>OF-OT</Label>
+                                <TextBox x:Name="OFOT_Filtro"  TextChanged="OFOT_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox    Text="{Binding OT}" Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding OT, Mode=TwoWay}" Background="LightCyan"/>
+
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+
+                </Custom:DataGridTemplateColumn>
+                <!-- OPERACION -->
+                <!--    <Custom:DataGridTextColumn x:Name="operacionColumsn" Binding="{Binding Operacion}" Header="Operacion" Width="SizeToHeader"/>-->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>OPERACION</Label>
+                                <TextBox x:Name="Operacion_Filtro"  TextChanged="Operacion_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding Operacion}"  Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding Operacion, Mode=TwoWay}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+
+
+                </Custom:DataGridTemplateColumn>
+                <!-- Referencia -->
+
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Referencia</Label>
+                                <TextBox x:Name="Refer_Filtro"  TextChanged="Refer_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox   x:Name="referenciaColumn"  Text="{Binding Referencia}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                </Custom:DataGridTemplateColumn>
+                <!-- -->
+                <!-- TIPO MOTIVO -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Tipo Motivo</Label>
+                                <ComboBox x:Name="cbTipoMotivo" FontSize="10" IsReadOnly="True" ItemsSource="{Binding ElementName=cbTipoMotivo_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbTipoMotivo_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbTipoMotivo_, Path=SelectedValuePath}" SelectionChanged="CbTipoMotivo_SelectionChanged"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Text="{Binding DescTipoMotivoMalas,Mode=OneWay}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <ComboBox FontSize="20" SelectedValue="{Binding IdTipoMotivo}" ItemsSource="{Binding ElementName=cbTipoMotivo_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbTipoMotivo_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbTipoMotivo_ ,Path=SelectedValuePath}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+                <!-- MOTIVO -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Motivo</Label>
+                                <ComboBox x:Name="cbMotivo" FontSize="10" IsReadOnly="True" ItemsSource="{Binding ElementName=cbMotivo_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbMotivo_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbMotivo_, Path=SelectedValuePath}" SelectionChanged="CbMotivo_SelectionChanged"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock  Text="{Binding DescMotivoMalas,Mode=OneWay}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <ComboBox FontSize="20" SelectedValue="{Binding IdMotivoMalas}" ItemsSource="{Binding ElementName=cbMotivo_, Path=ItemsSource}" DisplayMemberPath="{Binding ElementName=cbMotivo_, Path=DisplayMemberPath}" SelectedValuePath="{Binding ElementName=cbMotivo_ ,Path=SelectedValuePath}" />
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+
+
+                <!-- TIPO PIEZA -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Tipo Pieza</Label>
+                                <TextBox x:Name="tipoPza_filtro"  TextChanged="TipoPza_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding TipoPieza}"  Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding TipoPieza }" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+
+
+                <!-- CANTIDAD -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Cantidad</Label>
+                                <TextBox x:Name="Cantidad_filtro"  TextChanged="Cantidad_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding Cantidad, StringFormat={}{0:n2}}"  Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding Cantidad, StringFormat={}{0:n2}}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+
+                <!-- UNIDAD DE MEDIDA -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Ud Med</Label>
+                                <TextBox x:Name="udmed_filtro"  TextChanged="UdMed_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding UdMedida}"  Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding UdMedida}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+                <!-- INCIDENTE -->
+                <Custom:DataGridTemplateColumn>
+                    <Custom:DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                <Label>Incidente</Label>
+                                <TextBox x:Name="incid_filtro"  TextChanged="Incid_Filtro_TextChanged" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.HeaderTemplate>
+                    <Custom:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox  Text="{Binding Incidente}"  Background="Transparent"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellTemplate>
+                    <Custom:DataGridTemplateColumn.CellEditingTemplate >
+                        <DataTemplate >
+                            <TextBox  Text="{Binding Incidente}" Background="LightCyan"/>
+                        </DataTemplate>
+                    </Custom:DataGridTemplateColumn.CellEditingTemplate>
+                </Custom:DataGridTemplateColumn>
+
+            </Custom:DataGrid.Columns>
+        </Custom:DataGrid>
+        <Button Content="FILTRAR" FontFamily="Courier New" FontSize="20" FontWeight="ExtraBold" Background="LightGreen" Width="544" HorizontalAlignment="Left" Margin="10,0,0,540" Click="Filtrar_Pulsado"/>
+        <Button Content="BORRAR FILTRO" FontFamily="Courier New" FontSize="20" FontWeight="ExtraBold" Background="OrangeRed" Width="623" HorizontalAlignment="Left" Margin="559,0,0,540" Click="BorrarFiltro_Pulsado"/>
+
+        <!-- Command="{Binding AvisoRealizadoCMD}"-->
+        <TextBlock x:Name="txtStatus" HorizontalAlignment="Left" Margin="796,70,0,480" TextWrapping="Wrap" Background="LightPink" FontSize="12" VerticalAlignment="Center" Width="386" Height="21"/>
+
+
+
+
+
+    </Grid>
+</Window>
